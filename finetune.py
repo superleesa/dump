@@ -9,7 +9,7 @@ from transformers import (
                 )
 
 import torch
-from data_loader_swallow import load_my_dataset
+from data_loader import load_my_dataset
 import random
 
 from peft import LoraConfig, get_peft_model, prepare_model_for_kbit_training
