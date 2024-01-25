@@ -5,9 +5,15 @@ import torch._dynamo
 from accelerate import Accelerator
 from data_loader import load_my_dataset
 from peft import LoraConfig, get_peft_model, prepare_model_for_kbit_training
-from transformers import (AutoModelForCausalLM, AutoTokenizer,
-                          BitsAndBytesConfig, DataCollatorForLanguageModeling,
-                          EarlyStoppingCallback, Trainer, TrainingArguments)
+from transformers import (
+    AutoModelForCausalLM,
+    AutoTokenizer,
+    BitsAndBytesConfig,
+    DataCollatorForLanguageModeling,
+    EarlyStoppingCallback,
+    Trainer,
+    TrainingArguments,
+)
 
 
 def main():
@@ -106,7 +112,7 @@ def main():
         neftune_noise_alpha=5,
         **save_strategy_config
     )
-    
+
     collator = DataCollatorForLanguageModeling(tokenizer=tokenizer, mlm=False)
 
     trainer = Trainer(
