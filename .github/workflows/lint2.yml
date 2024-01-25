@@ -1,0 +1,20 @@
+name: Lint Code Base
+
+on: [push]
+
+jobs:
+  build:
+    name: Lint Code Base
+    timeout-minutes: 10
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+
+      - name: Lint Code Base
+        uses: docker://github/super-linter:v3.14.1
+        env:
+          VALIDATE_ALL_CODEBASE: true
+          VALIDATE_DOCKERFILE: false
+          VALIDATE_DOCKERFILE_HADOLINT: false
