@@ -106,8 +106,6 @@ def main():
         torch_compile=True,
         lr_scheduler_type="cosine",
         warmup_steps=500,
-        # per_gpu_train_batch_size=64,
-        # per_gpu_eval_batch_size=64,
         auto_find_batch_size=True,
         neftune_noise_alpha=5,
         **save_strategy_config
